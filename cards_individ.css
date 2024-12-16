@@ -1,0 +1,198 @@
+
+.input_card {
+    border: none;
+    border-bottom: solid 1px #fff ;
+    background-color: #232323;
+    color: #ddd;
+}
+
+.input_card:focus-visible {
+    border: none;
+    border-bottom: solid 2px #fff ;
+    background-color: #232323;
+    color: #fff;
+    outline: none;
+    padding-bottom: 2px;
+}
+
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
+
+#form_IMC{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+#form_IMC input{
+    max-width: 250px;
+    margin: auto;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.ava_ini_cont_val{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 40px;
+}
+
+.ava_ini_cont_val input{
+    margin-left: 5px;
+}
+.ava_ini_cont_val div{
+    text-align: start;
+}
+
+#avaliacao_ini_cont div input {
+    padding-right: 10px;
+}
+
+.conteudo{
+    border: 2px solid #00ff00;
+    padding: 10px;
+}
+
+
+#avaliacao_ini_cont{
+    display: flex;
+    border: solid #00ff00;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}
+.superior_form_cinza{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.superior_form_cinza>div{
+    border-bottom: 2px dashed #00ff00;
+    width: 100%;
+}
+
+.borda_inferior{
+    border-bottom: 2px dashed #00ff00;
+}
+
+#treinos_conteudo{
+    display: flex;
+    flex-direction: row;
+    max-width: 70vw;
+    max-width: 1000px;
+    padding: 10px;
+}
+
+#treinos_conteudo img{
+    max-width: 10vw;
+    max-width: 200px;
+}
+
+#treinos_conteudo ul {
+    list-style: none;
+    text-align: start;
+
+}
+
+
+#bg-mulher-sentada{
+    background-image: url('../src/img/ilustracoes/mulher_sentada_academia.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 100px;
+    aspect-ratio: 19/10;
+    width: 70vw;
+    min-height: 55vh;
+}
+
+
+
+#avaliacao_inicial_imc{
+    background-image: url("../src/img/ilustracoes/aerobico_academia.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    aspect-ratio: 19/10;
+    width: 70vw;
+    max-width: 1000px;
+}
+
+#treino_per{
+    background-image: url("../src/img/ilustracoes/agachamento_academia.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    aspect-ratio: 19/10;
+    width: 70vw;
+    max-width: 1000px;
+}
+
+
+
+
+
+@media (max-width: 450px) {
+    #avaliacao_inicial_imc {
+        width: 100vw;
+    }
+    #bg-mulher-sentada {
+        width: 100vw;
+    }
+    #treino_per{
+        width: 100vw;
+    }
+}
+@media (min-width: 576px) {
+    #treino_pers_card{
+        width: 400px;
+        margin-left: calc(100vw - 600px);
+    }
+}
+
+@media (min-width: 767px) {
+    #treino_pers_card{
+        margin-left: calc(100vw /4);
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .borda_inferior{
+        border-bottom: none;
+    }
+    #treino_pers_card{
+        margin-left: 450px;
+        width: 500px;
+    }
+    .superior_form_cinza {
+        padding: 5px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 0;
+    }
+    .ava_ini_cont_val {
+        padding: 0;
+    }
+    #avaliacao_ini_cont {
+        gap: 5px;
+        align-items: center;
+    }
+
+}

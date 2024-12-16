@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação</title>
+    <link rel="stylesheet" href="../styles/geral.css">
+    <link rel="stylesheet" href="../styles/cards_individ.css">
+    <link rel="shortcut icon" href="../src/img/icone/icone.png" type="image/png">
+    <script src="../script/menu.js"></script>
+</head>
+<body>
+<header>
+    <nav>
+        
+        <div>
+            <a href="index.html">
+                <img src="../src/img/icone/icone.png" alt="Logomarca">
+                
+            </a>
+        </div>
+        <div>
+        <ul class="mostra" id="menu">
+            <li><a href="#">Catálogo</a></li>
+            <li><a href="avaliacao_imc.html">Avaliação</a></li>
+            <li><a href="treino_personalizzado.html">Treino</a></li>
+            <li><a href="#">Progresso</a></li>
+            <li><a href="#">Mais</a></li>
+            <div id="dentro_dropdown">
+                <div id="usr_ico">
+
+                </div>
+                <a href="login.html">
+                    <button class="sty_btn">
+                        Comece Agora
+                    </button>
+                </a>
+            </div>
+        </ul>
+        </div>
+        <div id="fora_dropdown">
+            <div id="usr_ico">
+
+            </div>
+            <a href="login.html">
+                <button class="sty_btn">
+                    Comece Agora
+                </button>
+            </a>
+        </div>
+        <div onclick="muda_menu()" class="menu-toggle" id="menu-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+              </svg>
+        </div>
+    </nav>
+</header>
+        <section id="avaliacao_inicial_imc">
+            <article class="mostra pai_card_cinza" >
+                <div class="card_cinza" id="card_avalicao">
+                    <form action="#" method="post">
+                        <h3 class="ttl_vrd">Avaliação Inicial</h3>
+                        <article id="avaliacao_ini_cont">
+                            <div class="superior_form_cinza">
+                                <div class="ava_ini_cont_val">
+                                    <p>Qual seu objetivo:</p>
+                                    <div>
+                                        <input type="radio" name="objetivo" value="ganhar musculo">
+                                        <label for="objetivo">Ganhar músculo</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="objetivo" value="perder gordura">
+                                        <label for="objetivo">Perder gordura</label>
+                                    </div>
+                                </div>
+                                <div class="ava_ini_cont_val">
+                                    <p>Com qual frequência você se exercita?</p>
+                                    <div>
+                                        <input type="radio" name="frequencia" value="nunca">
+                                        <label for="frequencia">Nunca</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="frequencia" value="de 1 a 2">
+                                        <label for="frequencia">1-2 vezes por semana</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="frequencia" value=">3">
+                                        <label for="frequencia">Mais de três vezes na semana</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="ava_ini_cont_val">
+                                    <p>Qual seu biotipo corporal:</p>
+                                    <div>
+                                        <input type="radio" name="biotipo" value="endomorfo">
+                                        <label for="biotipo">Endomorfo</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="biotipo" value="mesomorfo">
+                                        <label for="biotipo">Mesomorfo</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="biotipo" value="ectomorfo">
+                                        <label for="biotipo">Ectomorfo</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <br>
+                        <br>
+                        <br>
+                        <input onclick="calcularIMC()" class="sty_btn" type="submit" value="Enviar">
+                        <p> Após preencher, aperte "enviar".</p>
+                    </form>
+                </div>
+            </article>
+        </section>
+        <section>
+            <article class="esconde card_cinza_ola">
+            <h3 class="ttl_vrd">Olá aluno</h3>
+            <div>
+                <p id="result_imc">
+                    
+                </p>
+                <p>
+                    Se o seu objetivo é ganhar massa muscular ou perder gordura, foque em manter uma alimentação equilibrada e acompanhar seu progresso com medidas mais específicas, como percentual de gordura e massa magra. Continue ajustando seu treino e dieta para atingir seus objetivos de forma saudável.
+                </p>
+                <p>Qualquer dúvida, entre em contato conosco!</p>
+            </div>
+            <button class="sty_btn">
+                Comece Agora
+            </button>
+        </article>    
+
+       </section>
+</body>
+        <!-- Script temporário-->
+<script> 
+function calcularIMC() {
+            // Recupera os dados do Local Storage
+            const peso = parseFloat(localStorage.getItem("peso"));
+            const altura = parseFloat(localStorage.getItem("altura"));
+
+            // Validação dos valores
+            if (!peso || !altura || peso <= 0 || altura <= 0) {
+                document.getElementById("result_imc").innerText = 
+                    "Para informações mais precisasas preencha os dados solicitados na página de avaliação!";
+                return;
+            }
+
+            // Calcula o IMC
+            const imc = peso / (altura * altura);
+            let mensagem;
+
+            // Define a mensagem baseada no IMC
+            if (imc < 18.5) {
+                mensagem = "Você está abaixo do peso ideal. É importante cuidar da alimentação!";
+            } else if (imc >= 18.5 && imc < 24.9) {
+                mensagem = "Parabéns! Você está com o peso ideal.";
+            } else if (imc >= 25 && imc < 29.9) {
+                mensagem = "Você está com sobrepeso. Considere buscar hábitos mais saudáveis.";
+            } else if (imc >= 30 && imc < 34.9) {
+                mensagem = "Você está com obesidade grau 1. Procure um profissional de saúde.";
+            } else if (imc >= 35 && imc < 39.9) {
+                mensagem = "Você está com obesidade grau 2. É essencial buscar acompanhamento médico.";
+            } else {
+                mensagem = "Você está com obesidade grau 3. Cuide-se com ajuda profissional!";
+            }
+
+            // Exibe o resultado no elemento com ID "result_imc"
+            document.getElementById("result_imc").innerText = 
+                `Seu IMC é ${imc.toFixed(2)}. ${mensagem}`;
+        }
+
+</script>
+</html>

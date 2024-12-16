@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações Pessoais</title>
+    <link rel="stylesheet" href="../styles/geral.css">
+    <link rel="shortcut icon" href="../src/img/icone/icone.png" type="image/png">
+    <script src="../script/menu.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            
+            <div>
+                <a href="index.html">
+                    <img src="../src/img/icone/icone.png" alt="Logomarca">
+                    
+                </a>
+            </div>
+            <div>
+            <ul class="mostra" id="menu">
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="avaliacao_imc.html">Avaliação</a></li>
+                <li><a href="treino_personalizzado.html">Treino</a></li>
+                <li><a href="#">Progresso</a></li>
+                <li><a href="#">Mais</a></li>
+                <div id="dentro_dropdown">
+                    <div id="usr_ico">
+    
+                    </div>
+                    <a href="login.html">
+                        <button class="sty_btn">
+                            Comece Agora
+                        </button>
+                    </a>
+                </div>
+            </ul>
+            </div>
+            <div id="fora_dropdown">
+                <div id="usr_ico">
+
+                </div>
+                <a href="login.html">
+                    <button class="sty_btn">
+                        Comece Agora
+                    </button>
+                </a>
+            </div>
+            <div onclick="muda_menu()" class="menu-toggle" id="menu-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                  </svg>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <form action="#" method="post">
+                <h3 class="ttl_vrd">Informações Pessoais</h3>   
+            
+                <div class="form-group-infop">
+                    <p>Informe seu gênero:</p>
+                    <input type="radio" name="genero" value="masculino">
+                    <label for="genero">Masculino</label>
+                    <input type="radio" name="genero" value="feminino">
+                    <label for="genero">Feminino</label>
+                    <input type="radio" name="genero" value="nao binario">
+                    <label for="genero">Não binario</label>
+                    <input type="radio" name="genero" value="nao informar">
+                    <label for="genero">Prefiro não informar</label>
+                </div>
+                <input 
+                class="sty_btn"
+                type="submit" value="Enviar">
+                <p> Obrigado pelo contato!</p>
+            </form>
+        </section>                
+    </main>
+</body>
+</html>
