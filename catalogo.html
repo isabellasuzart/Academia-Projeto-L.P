@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino Personalizado</title>
+    <link rel="stylesheet" href="../styles/geral.css">
+    <link rel="stylesheet" href="../styles/cards_individ.css">
+    <link rel="shortcut icon" href="../src/img/icone/icone.png" type="image/png">
+    <script src="../script/menu.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            
+            <div>
+                <a href="index.html">
+                    <img src="../src/img/icone/icone.png" alt="Logomarca">
+                    
+                </a>
+            </div>
+            <div>
+            <ul class="mostra" id="menu">
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="avaliacao_imc.html">Avaliação</a></li>
+                <li><a href="treino.html">Treino</a></li>
+                <li><a href="#">Progresso</a></li>
+                <li><a href="#">Mais</a></li>
+                <div id="dentro_dropdown">
+                    <div id="usr_ico">
+    
+                    </div>
+                    <a href="login.html">
+                        <button class="sty_btn">
+                            Comece Agora
+                        </button>
+                    </a>
+                </div>
+            </ul>
+            </div>
+            <div id="fora_dropdown">
+                <div id="usr_ico">
+
+                </div>
+                <a href="login.html">
+                    <button class="sty_btn">
+                        Comece Agora
+                    </button>
+                </a>
+            </div>
+            <div onclick="muda_menu()" class="menu-toggle" id="menu-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                  </svg>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="treino_per">
+            <article class="pai_card_cinza">
+                <div class="card_cinza" id="treino_pers_card">
+                    <form action="#" method="post">
+                        <h3 class="ttl_vrd">
+                            Treino Personalizado
+                        </h3>
+                        <article class="conteudo">
+                            <div class="superior_form_cinza">
+                                <div class="ava_ini_cont_val">
+                                    <p>Onde você vai se exercitar?</p>
+                                    <div>
+                                        <input required type="radio" name="lugar" value="casa">
+                                        <label for="lugar">Casa</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="lugar" value="academia">
+                                        <label for="lugar">Academia</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="lugar" value="ar livre">
+                                        <label for="lugar">Ar livre</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="lugar" value="outro">
+                                        <label for="lugar">Outro</label>
+                                    </div>
+                
+                                </div>
+                                <div class="ava_ini_cont_val">
+                                    <p>Quanto tempo você tem para treinar?</p>
+                                    <div>
+                                        <input required type="radio" name="tempo_treinar" value="10-15">
+                                        <label for="tempo_treinar">10-15 minutos</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="tempo_treinar" value="20-30">
+                                        <label for="tempo_treinar">20-30 minutos</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="tempo_treinar" value=">>30">
+                                        <label for="tempo_treinar">Mais de 30 minutos</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="inferior_form_cinza ">
+                                <div class="ava_ini_cont_val borda_inferior">
+                                    <p>Qual seu nível de experiência?</p>
+                                    <div>
+                                        <input required type="radio" name="experiencia" value="iniciante">
+                                        <label for="experiencia">Iniciante</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="experiencia" value="intermediario">
+                                        <label for="experiencia">Intermediario</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="experiencia" value="avançado">
+                                        <label for="experiencia">Avançado</label>
+                                    </div>
+                                </div>
+                                <div class="ava_ini_cont_val" >
+                                    <p>Qual área do corpo você deseja focar?</p>
+                                    <div>
+                                        <input required type="radio" name="foco" value="torax">
+                                        <label for="foco">Tórax</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="foco" value="superiores">
+                                        <label for="foco">Membros superiores</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="foco" value="abdomem">
+                                        <label for="foco">Abdomem</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="foco" value="pelve">
+                                        <label for="foco">Pelve</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="foco" value="inferiores">
+                                        <label for="foco">Membros inferiores</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <br>
+                        <a href="treino.html"><input class="sty_btn" type="submit" value="Gerar Treino"></a>
+                        <p> Aperte em "Gerar Treino" para enviar o formulário.</p>
+                    </form>
+                </div>
+            </article>
+        </section>
+       
+    </main>
+</body>
+</html>

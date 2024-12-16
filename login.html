@@ -4,55 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="../styles/geral.css">
     <link rel="shortcut icon" href="../src/img/icone/icone.png" type="image/png">
+    <link rel="stylesheet" href="../styles/cards_individ.css">
+    <script src="../script/menu.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div>
-                <img src="../src/img/icone/icone.png" alt="Logomarca">
-            </div>
-            <div>
-                <ul>
-                    <li><a href="#">Catálogo</a></li>
-                    <li><a href="#">Avaliação</a></li>
-                    <li><a href="#">Treino</a></li>
-                    <li><a href="#">Progresso</a></li>
-                    <li><a href="#">Mais</a></li>
-                </ul>
-            </div>
-            <div>
-                <div id="usr_ico">
-
-                </div>
-                <a href="#">
-                    <button class="sty_btn">
-                        Comece Agora
-                    </button>
-                </a>
-            </div>
-        </nav>
-    </header>
     <main>
-        <section>
-            <form action="#" method="post">
-                <h3 class="ttl_vrd">Login</h3>
-            
-                <div class="form-group">
-                    <label for="email">E-mail</label>
-                    <input
-                    required
-                    type="email" name="email" id="email" placeholder="exemplo@email.com">
-                    <label for="senha">Senha</label>
-                    <input
-                    required
-                    type="password" name="senha" id="senha">
-                    <input 
-                    class="sty_btn"
-                    type="submit" value="Enviar">
-                </div>
-                <p> Não tem uma conta? Clique <a href="cadastro.html">aqui</a>.</p>
-            </form>
+        <section class="pai_card_cinza" id="login_cadastro">
+            <article class="card_cinza" id="card_login_cad">
+                <form>
+                    <h3 class="ttl_vrd">Login</h3>
+                
+                    <div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input class="input_card"
+                            required
+                            type="email" name="email" id="email" placeholder="exemplo@email.com">
+                            <label for="senha">Senha</label>
+                            <input class="input_card"
+                            required
+                            type="password" name="senha"
+                            id="senha"
+                            placeholder="********">
+                        
+                        </div>
+                        <input
+                        class="sty_btn"
+                        type="submit" value="Enviar">
+                        <p> Não tem uma conta? Clique <a href="informacoes_pessoais.html">aqui</a>.</p>
+                    </div>
+                </form>
+            </article>
         </section>                
     </main>
 </body>

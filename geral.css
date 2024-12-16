@@ -158,7 +158,19 @@ main p {
 }
 
 .card_cinza p{
-    color: #fff
+    color: #fff;
+    font-size: 0.8em;
+}
+
+.card_cinza a, .card_cinza  a:active, .card_cinza  a:focus{
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card_cinza a:hover{
+    color: #0f0;
 }
 
 .card_cinza .sty_btn {
@@ -175,6 +187,10 @@ main p {
     justify-content: center;
 }
 
+.limit_form{
+    max-width: 250px;
+    margin: auto;
+}
 
 .esconde {
     display: none;
@@ -236,6 +252,7 @@ main p {
     #card_avalicao{
         max-width: 100vw;
     }
+    
 }
 
 @media (min-width: 576px) {
@@ -258,7 +275,7 @@ main p {
     .card_cinza{
         margin-top: 200px;
         max-width: 500px;
-        margin-left: calc(100vw - 500px);
+        margin-left: calc(100vw/7);
     }
     #card_compromisso{
         width: 400px;
@@ -272,7 +289,7 @@ main p {
    .card_cinza{
     margin-top: 200px;
     max-width: 550px;
-    margin-left: calc(100vw - 550px);
+    margin-left: calc(100vw/4.2);
 }
     #card_avalicao{
         width: 450px;
@@ -307,6 +324,7 @@ main p {
         display: flex;
         flex-direction: row;
         width: 100%;
+        justify-content: space-between;
     }
 
     

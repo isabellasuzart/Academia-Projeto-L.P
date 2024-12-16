@@ -90,17 +90,34 @@ input[type=number] {
     border-bottom: 2px dashed #00ff00;
 }
 
+.text_ava_result{
+    text-align: justify;
+    text-indent: 2em;
+    max-width: 350px;
+}
+
+
 #treinos_conteudo{
     display: flex;
     flex-direction: row;
     max-width: 70vw;
     max-width: 1000px;
     padding: 10px;
+    gap: 20px;
+}
+
+#treinos_conteudo > div{
+    background-color: #00ff00c9;
+}
+#treinos_conteudo > div:hover{
+    padding: 5px;
+    background-color: #cdcdcd;
+    cursor: pointer;
 }
 
 #treinos_conteudo img{
     max-width: 10vw;
-    max-width: 200px;
+    max-width: 100%;
 }
 
 #treinos_conteudo ul {
@@ -108,6 +125,32 @@ input[type=number] {
     text-align: start;
 
 }
+
+#card_login_cad{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+#card_login_cad form div div{
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    gap: 30px;
+    padding: 0 10px;
+}
+
+#login_cadastro{
+    background-image: url("../src/img/ilustracoes/mulher_pulando_academia.avif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    aspect-ratio: 19/10;
+    width: 70vw;
+    max-width: 1000px;
+}
+
+
+
 
 
 #bg-mulher-sentada{
@@ -158,14 +201,28 @@ input[type=number] {
         width: 100vw;
     }
 }
+@media (max-width: 600px) {
+    #treinos_conteudo {
+        display: flex;
+        flex-direction: column;
+    }
+}
 @media (min-width: 576px) {
     #treino_pers_card{
         width: 400px;
         margin-left: calc(100vw - 600px);
     }
+    #card_login_cad{
+        width: 340px;
+        margin-left: calc(100vw /4);
+    }
 }
 
 @media (min-width: 767px) {
+    #card_login_cad {
+        width: 400px;
+        margin-left: calc(100vw / 4);
+    }
     #treino_pers_card{
         margin-left: calc(100vw /4);
     }
@@ -173,6 +230,10 @@ input[type=number] {
 }
 
 @media (min-width: 1200px) {
+    #card_login_cad{
+        width: 500px;
+        margin-left: 356px;
+    }
     .borda_inferior{
         border-bottom: none;
     }
@@ -189,6 +250,10 @@ input[type=number] {
     }
     .ava_ini_cont_val {
         padding: 0;
+    }
+
+    .ifo_pes_cont{
+        padding: 110px;
     }
     #avaliacao_ini_cont {
         gap: 5px;

@@ -21,9 +21,9 @@
         </div>
         <div>
         <ul class="mostra" id="menu">
-            <li><a href="#">Catálogo</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
             <li><a href="avaliacao_imc.html">Avaliação</a></li>
-            <li><a href="treino_personalizzado.html">Treino</a></li>
+            <li><a href="treino.html">Treino</a></li>
             <li><a href="#">Progresso</a></li>
             <li><a href="#">Mais</a></li>
             <div id="dentro_dropdown">
@@ -58,14 +58,14 @@
         <section id="avaliacao_inicial_imc">
             <article class="mostra pai_card_cinza" >
                 <div class="card_cinza" id="card_avalicao">
-                    <form action="#" method="post">
+                    <form>
                         <h3 class="ttl_vrd">Avaliação Inicial</h3>
                         <article id="avaliacao_ini_cont">
                             <div class="superior_form_cinza">
                                 <div class="ava_ini_cont_val">
                                     <p>Qual seu objetivo:</p>
                                     <div>
-                                        <input type="radio" name="objetivo" value="ganhar musculo">
+                                        <input required type="radio" name="objetivo" value="ganhar musculo">
                                         <label for="objetivo">Ganhar músculo</label>
                                     </div>
                                     <div>
@@ -76,7 +76,7 @@
                                 <div class="ava_ini_cont_val">
                                     <p>Com qual frequência você se exercita?</p>
                                     <div>
-                                        <input type="radio" name="frequencia" value="nunca">
+                                        <input required type="radio" name="frequencia" value="nunca">
                                         <label for="frequencia">Nunca</label>
                                     </div>
                                     <div>
@@ -93,7 +93,7 @@
                                 <div class="ava_ini_cont_val">
                                     <p>Qual seu biotipo corporal:</p>
                                     <div>
-                                        <input type="radio" name="biotipo" value="endomorfo">
+                                        <input required type="radio" name="biotipo" value="endomorfo">
                                         <label for="biotipo">Endomorfo</label>
                                     </div>
                                     <div>
@@ -108,16 +108,18 @@
                             </div>
                         </article>
                         <br>
+                        
+                        <br>
+                        <a onclick="calcularIMC()" class="sty_btn">Enviar</a>
                         <br>
                         <br>
-                        <input onclick="calcularIMC()" class="sty_btn" type="submit" value="Enviar">
                         <p> Após preencher, aperte "enviar".</p>
                     </form>
                 </div>
             </article>
         </section>
-        <section>
-            <article class="esconde card_cinza_ola">
+        <section id="bg-mulher-sentada" class="esconde">
+            <article class="card_cinza text_ava_result">
             <h3 class="ttl_vrd">Olá aluno</h3>
             <div>
                 <p id="result_imc">
@@ -138,22 +140,28 @@
         <!-- Script temporário-->
 <script> 
 function calcularIMC() {
+
+            let result_pai = document.getElementById('bg-mulher-sentada')
+            let avaliacao_cont = document.getElementById("avaliacao_inicial_imc")
+            avaliacao_cont.classList.add("esconde");
+            result_pai.classList.remove("esconde");
+
             // Recupera os dados do Local Storage
             const peso = parseFloat(localStorage.getItem("peso"));
             const altura = parseFloat(localStorage.getItem("altura"));
+            console.log(altura);
 
-            // Validação dos valores
+
             if (!peso || !altura || peso <= 0 || altura <= 0) {
                 document.getElementById("result_imc").innerText = 
-                    "Para informações mais precisasas preencha os dados solicitados na página de avaliação!";
+                    "Para informações mais precisasas preencha os dados solicitados na página de avaliação corporal incluindo a página de informações para o IMC!";
                 return;
             }
 
-            // Calcula o IMC
             const imc = peso / (altura * altura);
             let mensagem;
 
-            // Define a mensagem baseada no IMC
+
             if (imc < 18.5) {
                 mensagem = "Você está abaixo do peso ideal. É importante cuidar da alimentação!";
             } else if (imc >= 18.5 && imc < 24.9) {
@@ -168,7 +176,6 @@ function calcularIMC() {
                 mensagem = "Você está com obesidade grau 3. Cuide-se com ajuda profissional!";
             }
 
-            // Exibe o resultado no elemento com ID "result_imc"
             document.getElementById("result_imc").innerText = 
                 `Seu IMC é ${imc.toFixed(2)}. ${mensagem}`;
         }

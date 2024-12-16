@@ -21,9 +21,9 @@
             </div>
             <div>
             <ul class="mostra" id="menu">
-                <li><a href="#">Catálogo</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
                 <li><a href="avaliacao_imc.html">Avaliação</a></li>
-                <li><a href="treino_personalizzado.html">Treino</a></li>
+                <li><a href="treino.html">Treino</a></li>
                 <li><a href="#">Progresso</a></li>
                 <li><a href="#">Mais</a></li>
                 <div id="dentro_dropdown">
@@ -60,20 +60,21 @@
 
             <article class="pai_card_cinza">
                 <div class="card_cinza" >
-                    <form action="#" method="post" id="form_IMC">
+                    <form   id="form_IMC">
                         <h3 class="ttl_vrd">Avaliação Inicial</h3>
                     
-                        <div class="form-group">
+                        <div class="form-group limit_form">
                             <label for="altura">Altura(m)</label>
                             <input class="input_card" required type="number" name="altura" id="altura">
                             <label for="peso">Peso(Kg)</label>
-                            <input class="input_card" type="number" name="peso" id="peso">
+                            <input class="input_card" required type="number" name="peso" id="peso">
+                            
+                            <br><br>
+
+                            <button onclick="guardar_dados()" class="sty_btn">
+                                Continuar
+                            </button>
                         </div>
-                        <a href="avaliacao.html">
-                            <input
-                            class="sty_btn"
-                            type="submit" value="Enviar">
-                        </a>
                         <p> Aperte em enviar para confirmar.</p>
                     </form>
                 </div>
@@ -81,4 +82,30 @@
         </section>                
     </main>
 </body>
+<!-- Script temporário-->
+<script>
+function guardar_dados(){
+        const altura = parseFloat(document.getElementById('altura').value);
+        const peso = parseFloat(document.getElementById('peso').value);
+
+        
+        
+        if (!isNaN(peso) && !isNaN(altura) && parseFloat(peso) > 0 && parseFloat(altura) > 0) {
+            event.preventDefault()
+            localStorage.setItem("altura", altura);
+            localStorage.setItem("peso", peso);
+        
+            // Redireciona o usuário para a próxima página
+            window.location.href = "avaliacao.html";
+        };
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const alturaSalva = localStorage.getItem("altura");
+        const pesoSalvo = localStorage.getItem("peso");
+
+        if (alturaSalva) document.getElementById('altura').value = alturaSalva;
+        if (pesoSalvo) document.getElementById('peso').value = pesoSalvo;
+    });
+</script>
 </html>

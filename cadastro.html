@@ -4,32 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    <link rel="stylesheet" href="../styles/geral.css">
     <link rel="shortcut icon" href="../src/img/icone/icone.png" type="image/png">
+    <link rel="stylesheet" href="../styles/cards_individ.css">
+    <script src="../script/menu.js"></script>
 </head>
 <body>
-    
     <main>
-        <section>
-            <form action="#" method="post">
+        <section class="pai_card_cinza" id="login_cadastro">
+            <article class="card_cinza" id="card_login_cad">
+                <form>
                 <h3 class="ttl_vrd">Cadastro</h3>
-                <div>
-                    <label for="nome">Nome:</label>
-                    <input required type="text" name="nome" id="nome">
-                    <label for="data_nas">Data de Nascimento</label>
-                    <input required type="date" name="data_nas" id="data_nas">
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha" id="senha">
-                </div>
-                <div>
-                    <label for="sobrenome">Sobrenome</label>
-                    <input type="text" name="sobrenome" id="sobrenome">
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email">
-                    <button class="sty_btn">
-                        Enviar
-                    </button>
-
-                    <p> Obrigado pelo contato!</p>
+                <div class="inferior_form_cinza">
+                    <div>
+                        <label for="nome">Nome:</label>
+                        <input class="input_card" required type="text" name="nome" id="nome">
+                        <label for="data_nas">Data de Nascimento</label>
+                        <input class="input_card" required type="date" name="data_nas" id="data_nas">
+                        <label for="senha">Senha</label>
+                        <input class="input_card" type="password" name="senha" id="senha">
+                    </div>
+                    <div>
+                        <label for="sobrenome">Sobrenome</label>
+                        <input class="input_card" type="text" name="sobrenome" id="sobrenome">
+                        <label for="email">E-mail</label>
+                        <input class="input_card" type="email" name="email" id="email">
+                        <button class="sty_btn">
+                            Enviar
+                        </button>
+                        <p> Obrigado pelo contato!</p>
+                    </div>
                 </div>
             </form>
         </section>
